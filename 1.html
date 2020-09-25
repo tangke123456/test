@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习vueJS基础语法</title>
+    <!--1.引入vue-->
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!--3.设置vue的挂载点(由vue接管控制的区域)-->
+    <div id="app">
+        <h1>{{className}}</h1>
+        <h2 v-once>{{className}}</h2>
+        <input type="text" v-model='className'>
+    </div>
+    <script>
+        //2.创建实例对象
+        var vm = new Vue({
+            //3.2指向挂载点（找到要接管的区域）
+            el:'#app',
+            //4.准备数据
+            Date: {
+                className: '软件18-2',
+                age: 20,
+                student: ['张三','李四','王五'],
+                course:{name:'web前端开发',num:64,tea:'张光辉'},
+                stulist:[
+                    {name:'张三',age:20,sex:'男'},
+                    {name:'李四',age:18,sex:'女'},
+                ],
+            }
+        });
+    </script>
+</body>
+</html>
